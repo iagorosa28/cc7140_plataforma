@@ -5,11 +5,15 @@ public class Player : MonoBehaviour
 
     public KeyCode moveRight = KeyCode.RightArrow;
     public KeyCode moveLeft = KeyCode.LeftArrow;
-    public KeyCode jump = KeyCode.Space;
+    public KeyCode jump = KeyCode.UpArrow;
+    public KeyCode fire = KeyCode.Space;
     public float moveSpeed = 5f;
     public float jumpForce = 20f;
-    public float boundX = 8.3f;
-    public float boundY = 3.9f;
+    public float boundX = 13.0f;
+    public float boundY = 4.5f;
+
+    public GameObject tiroPrefab;
+    public Transform firePoint;
 
     private Rigidbody2D rb;
     private bool isGrounded = true;
@@ -53,6 +57,12 @@ public class Player : MonoBehaviour
         var hPosition = transform.position;
         hPosition.x = Mathf.Clamp(hPosition.x, -boundX, boundX);
         transform.position = hPosition;
+
+        if (Input.GetKeyDown(fire))
+        {
+            firePoint = transform.Find("FirePoint");
+            Instantiate(tiroPrefab, firePoint.position, Quaternion.identity);
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

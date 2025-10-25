@@ -1,10 +1,11 @@
 using UnityEngine;
 
-public class ParallaxA : MonoBehaviour
+public class Parallax : MonoBehaviour
 {
-    private float length;
-    public float parallaxEffect;
     public static float movingSpeed = 5f;
+
+    private float length;
+    private float parallaxEffect = 1;
     private float startPosX;
 
     void Start()
