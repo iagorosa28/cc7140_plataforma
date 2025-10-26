@@ -1,12 +1,13 @@
 using UnityEngine;
 
-public class FundoDaMorte : MonoBehaviour
+public class Item : MonoBehaviour
 {
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
-            GameManager.LoseLife(3);
+            Destroy(gameObject);
+            GameManager.AddScore(100);
         }
     }
 }

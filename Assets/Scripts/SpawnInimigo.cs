@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Spawn : MonoBehaviour
+public class SpawnInimigo : MonoBehaviour
 {
     public GameObject inimigoPrefab;
 

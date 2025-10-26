@@ -7,7 +7,7 @@ public class Inimigo1Damage : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Destroy(transform.root.gameObject);         // destrói o inimigo
-            Destroy(other.gameObject);                  // destrói o Player
+            GameManager.LoseLife(1);
         }
     }
 }
