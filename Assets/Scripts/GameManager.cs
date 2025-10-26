@@ -19,9 +19,8 @@ public class GameManager : MonoBehaviour
         Score += amount;
         if (Score >= 500)
         {
-            //Score = 0;
-            //SpawnInimigo.waitTime = 1.0f;
             SceneLoader.LoadGame();
+            SpawnInimigo.waitTime = 1.0f;
         }
     }
 
@@ -30,9 +29,8 @@ public class GameManager : MonoBehaviour
         Lives -= amount;
         if (Lives <= 0)
         {
-            //Lives = 3;
-            //SpawnInimigo.waitTime = 1.0f;
             SceneLoader.LoadGame();
+            SpawnInimigo.waitTime = 1.0f;
         }
     }
 
