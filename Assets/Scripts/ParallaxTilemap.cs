@@ -5,12 +5,10 @@ public class ParallaxTilemap : MonoBehaviour
 {
     private float length;
     private float parallaxEffect = 1;
-    private float startPosX;
     public float ajustLength = 1;
 
     void Start()
     {
-        startPosX = transform.position.x;
         length = GetComponent<TilemapRenderer>().bounds.size.x;
     }
 

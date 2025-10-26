@@ -1,4 +1,4 @@
-using System.Threading.Tasks;
+//using System.Threading.Tasks;
 using UnityEngine;
 
 public class Tiro : MonoBehaviour
@@ -15,13 +15,12 @@ public class Tiro : MonoBehaviour
         }
     }
 
-    //void OnTriggerEnter2D(Collider2D other)
-    //{
-    //    if (other.CompareTag("Inimigo"))
-    //    {
-    //        Destroy(other.gameObject);
-    //        Destroy(gameObject);
-    //        GameManager.AddScore(10);
-    //    }
-    //}
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Inimigo1"))
+        {
+            Destroy(gameObject);
+            Destroy(other.gameObject);
+        }
+    }
 }
